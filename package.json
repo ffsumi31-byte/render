@@ -1,0 +1,21 @@
+{
+  "name": "gateway-cloud-portal",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "admin-key": "node scripts/admin-key.mjs",
+    "issue-user": "node scripts/users.mjs issue",
+    "revoke-user": "node scripts/users.mjs revoke",
+    "grant-tokens": "node scripts/users.mjs grant",
+    "start": "node render-server.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "js-tiktoken": "^1.0.21",
+    "pg": "^8.16.3"
+  }
+}

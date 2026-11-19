@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#0b0e0d">
+  <title>Administration · ApiDuck</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/workspace.css">
+  <link rel="stylesheet" href="/admin.css">
+  <script src="/admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <header class="admin-header">
+    <div class="admin-header-inner">
+      <a class="admin-wordmark" href="/" aria-label="ApiDuck customer portal">ApiDuck</a>
+      <span class="admin-location">Administration</span>
+      <a class="admin-back" href="/">Customer portal</a>
+    </div>
+  </header>
+  <main>
+    <div class="admin-heading">
+      <h1>Account administration</h1>
+      <p>Manage customer access and lifetime token grants.</p>
+    </div>
+    <section class="panel" id="admin-login-panel" aria-labelledby="admin-signin-title">
+      <h2 id="admin-signin-title">Administrator sign-in</h2>
+      <p id="admin-key-help">Use your separate <code>sk-admin-…</code> administrator key.</p>
+      <form id="admin-login">
+        <label for="admin-key">Admin key</label>
+        <input id="admin-key" type="password" placeholder="sk-admin-…" autocomplete="off"
+               spellcheck="false" autocapitalize="none" aria-describedby="admin-key-help" required>
+        <button class="primary" type="submit">Unlock administration <span aria-hidden="true">→</span></button>
+      </form>
+    </section>
+    <p id="admin-status" role="status" aria-live="polite" aria-atomic="true"></p>
+    <div id="admin-controls" hidden>
+      <div class="admin-toolbar">
+        <button class="secondary" id="admin-refresh" type="button">Refresh accounts</button>
+        <button class="secondary" id="admin-logout" type="button">Lock administration</button>
+      </div>
+      <div class="admin-grid">
+        <section class="panel" aria-labelledby="admin-create-title">
+          <h2 id="admin-create-title">Create a customer key</h2>
+          <form id="create-user">
+            <label for="customer-name">Customer name</label>
+            <input id="customer-name" maxlength="100" required>
+            <label for="grant-tokens">Initial lifetime tokens</label>
+            <input id="grant-tokens" type="number" min="1" max="1000000000" step="1" value="10000000" required>
+            <label for="grant-reason">Reason or purchase reference</label>
+            <input id="grant-reason" minlength="3" maxlength="300" aria-describedby="grant-help" required>
+            <small id="grant-help">Leave keys and other secrets out of this reference.</small>
+            <button class="primary" type="submit">Create key and grant tokens</button>
+          </form>
+          <div id="new-key-box" hidden>
+            <label for="new-key">New customer key</label>
+            <p id="new-key-help">Copy this key now and deliver it privately. It is shown only once.</p>
+            <input id="new-key" readonly aria-describedby="new-key-help">
+            <div class="admin-actions">
+              <button class="secondary" id="copy-key" type="button">Copy key</button>
+              <button class="secondary" id="dismiss-key" type="button">Hide and clear</button>
+            </div>
+          </div>
+        </section>
+        <section class="panel admin-customers" aria-labelledby="admin-customers-title">
+          <h2 id="admin-customers-title">Customers</h2>
+          <p>Balances for the latest 100 accounts, from the token ledger.</p>
+          <div id="customer-list"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

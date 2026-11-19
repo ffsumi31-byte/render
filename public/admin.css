@@ -1,0 +1,24 @@
+.admin-page{background:#0e140f;min-height:100vh}
+.admin-header{border-bottom:1px solid #2d4032;background:#111b14}
+.admin-header-inner{max-width:1220px;margin:auto;min-height:64px;padding:0 24px;display:flex;align-items:center;gap:20px}
+.admin-wordmark{font-weight:750;font-size:21px;letter-spacing:-.05em;color:#d9f2df}
+.admin-location{font-size:12px;color:#a8c5ae;border-left:1px solid #48644d;padding-left:20px}
+.admin-back{margin-left:auto;font-size:12px;color:#b2e5bb}
+.admin-page main{max-width:1220px;padding:35px 24px 90px}
+.admin-heading{margin-bottom:26px}.admin-heading h1{font-size:clamp(32px,4vw,50px)}
+.admin-page .panel{padding:24px}.admin-page form{max-width:540px}
+.admin-page input{padding:12px;width:100%;min-height:44px}
+.admin-page label{margin:18px 0 8px}
+.admin-page .primary{margin-top:18px}
+.admin-page small{color:#a9b8aa}
+.admin-toolbar,.admin-actions{display:flex;gap:10px;flex-wrap:wrap;margin:17px 0}
+.admin-grid{display:grid;grid-template-columns:minmax(290px,.9fr) minmax(300px,1.1fr);gap:18px}
+.admin-customers #customer-list{display:grid;gap:10px;margin-top:18px}
+.admin-customers article{background:#141f17;padding:16px}
+.admin-customers article h3{font-size:15px;margin:0 0 6px;overflow-wrap:anywhere}
+.admin-customers article p{overflow-wrap:anywhere}
+.admin-customers article button{margin:5px 8px 0 0}
+#new-key-box{margin-top:22px;padding-top:10px;border-top:1px solid #395440}
+#new-key{font-family:ui-monospace,monospace}
+#admin-status{min-height:1.5em}
+@media(max-width:730px){.admin-grid{grid-template-columns:1fr}.admin-page main{padding:26px 18px 70px}.admin-header-inner{padding:0 18px}.admin-page .panel{padding:18px}}

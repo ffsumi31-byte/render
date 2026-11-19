@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: apiduck-portal
+    runtime: node
+    buildCommand: npm ci && npm test
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: PUBLIC_ORIGIN
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: ADMIN_ACCESS_KEY
+        sync: false
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: INFERENCE_ENABLED
+        value: "false"
